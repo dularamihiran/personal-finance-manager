@@ -1,0 +1,20 @@
+{
+  "name": "personal-finance-manager",
+  "version": "1.0.0",
+  "description": "A Personal Finance Manager to track monthly income and expenses",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install-deps": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "keywords": ["finance", "budget", "expense-tracker", "react", "mongodb"],
+  "author": "Personal Finance Manager",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
