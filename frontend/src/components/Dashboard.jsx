@@ -23,13 +23,13 @@ function Dashboard({ user }) {
     try {
       const token = localStorage.getItem('token')
       const [summaryRes, transactionsRes, categoriesRes] = await Promise.all([
-        fetch('/api/dashboard/summary', {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/dashboard/summary`, {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('/api/dashboard/recent-transactions', {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/dashboard/recent-transactions`, {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('/api/dashboard/expense-categories', {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/dashboard/expense-categories`, {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ])
