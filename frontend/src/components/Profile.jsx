@@ -26,7 +26,7 @@ function Profile({ user }) {
 
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('/api/user/profile', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function Profile({ user }) {
 
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('/api/user/change-password', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/change-password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ function Reports({ user }) {
   const fetchReportData = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`/api/reports?month=${selectedMonth}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reports?month=${selectedMonth}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
 

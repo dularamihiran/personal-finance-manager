@@ -26,7 +26,7 @@ function IncomeForm({ user }) {
 
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('/api/income', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

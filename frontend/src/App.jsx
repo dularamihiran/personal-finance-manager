@@ -19,7 +19,7 @@ function App() {
     const token = localStorage.getItem('token')
     if (token) {
       // Verify token with backend
-      fetch('/api/auth/verify', {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/verify`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
