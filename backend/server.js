@@ -25,6 +25,11 @@ app.use('/api/dashboard', dashboardRoutes)
 app.use('/api/reports', reportRoutes)
 app.use('/api/user', userRoutes)
 
+// ✅ Root route
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Backend is running!' })
+})
+
 // MongoDB Connection
 const connectDB = async () => {
   try {
@@ -43,7 +48,7 @@ connectDB()
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/dist')))
-  
+
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'))
   })
